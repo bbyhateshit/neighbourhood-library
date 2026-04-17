@@ -6,16 +6,16 @@ import java.util.Scanner;
 public class LibraryApp {
     public static void main(String[] args) {
 
-        Book[] books = new Book[] {
-                new Book(1,  "978-0143127-741", "To Kill a Mockingbird", null, false),
-                new Book(2,  "978-0307277-671", "1984", null, false),
-                new Book(3,  "978-0061120-084", "Brave New World", null, false),
-                new Book(4,  "978-0743273-565", "The Great Gatsby", null, false),
-                new Book(5,  "978-0307387-899", "Fahrenheit 451", null, false),
-                new Book(6,  "978-0439023-528", "The Hunger Games", null, false),
-                new Book(7,  "978-0544003-415", "The Hobbit", null, false),
-                new Book(8,  "978-0307474-278", "The Road", null, false),
-                new Book(9,  "978-0060850-524", "The Alchemist", null, false),
+        Book[] books = new Book[]{
+                new Book(1, "978-0143127-741", "To Kill a Mockingbird", null, false),
+                new Book(2, "978-0307277-671", "1984", null, false),
+                new Book(3, "978-0061120-084", "Brave New World", null, false),
+                new Book(4, "978-0743273-565", "The Great Gatsby", null, false),
+                new Book(5, "978-0307387-899", "Fahrenheit 451", null, false),
+                new Book(6, "978-0439023-528", "The Hunger Games", null, false),
+                new Book(7, "978-0544003-415", "The Hobbit", null, false),
+                new Book(8, "978-0307474-278", "The Road", null, false),
+                new Book(9, "978-0060850-524", "The Alchemist", null, false),
                 new Book(10, "978-0385472-579", "The Things They Carried", null, false),
                 new Book(11, "978-0140283-334", "Lord of the Flies", null, false),
                 new Book(12, "978-0307346-605", "The Book Thief", null, false),
@@ -34,26 +34,41 @@ public class LibraryApp {
         System.out.println("t1) Show available books");
         System.out.println("t2) Show checked out books");
         System.out.println("t0) Exit");
-        System.out.print("Please choose an option");
+        System.out.print("Please choose an option: ");
 
         int option = scanner.nextInt();
 
         switch (option) {
             case 1 -> {
-                //showAvailableBooks(books);
+                showAvailableBooks(books);
             }
             case 2 -> {
-                //showCheckedOutBooks(books);
+                showCheckedOutBooks(books);
             }
             case 0 -> {
                 System.out.println("Goodbye");
             }
         }
 
-
-    for (int i = 0; i < books.length; i++) {
-        System.out.println(books[i]);
     }
+
+    public static void showAvailableBooks(Book[] books) {
+
+        for (int i = 0; i < books.length; i++) {
+            if (!books[i].isCheckedOut()) {
+                System.out.println(books[i]);
+            }
+        }
+    }
+
+    public static void showCheckedOutBooks(Book[] books) {
+
+        for (int i = 0; i < books.length; i++) {
+            if (books[i].isCheckedOut()) {
+                System.out.println(books[i]);
+            }
+
+        }
 
     }
 
