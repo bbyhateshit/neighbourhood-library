@@ -67,4 +67,15 @@ public Book(int id, String isbn, String title, String checkedOutTo, boolean isCh
     public String getIsbn() {
         return isbn;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", isCheckedOut=" + isCheckedOut +
+                ", checkedOutTo='" + checkedOutTo + '\'' +
+                '}';
+    }
 }
