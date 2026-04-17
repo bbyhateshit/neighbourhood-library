@@ -12,9 +12,9 @@ public class LibraryApp {
                 new Book(3, "978-0061120-084", "Brave New World", null, false),
                 new Book(4, "978-0743273-565", "The Great Gatsby", null, false),
                 new Book(5, "978-0307387-899", "Fahrenheit 451", null, false),
-                new Book(6, "978-0439023-528", "The Hunger Games", null, false),
+                new Book(6, "978-0439023-528", "The Hunger Games", null, true),
                 new Book(7, "978-0544003-415", "The Hobbit", null, false),
-                new Book(8, "978-0307474-278", "The Road", null, false),
+                new Book(8, "978-0307474-278", "The Road", null, true),
                 new Book(9, "978-0060850-524", "The Alchemist", null, false),
                 new Book(10, "978-0385472-579", "The Things They Carried", null, false),
                 new Book(11, "978-0140283-334", "Lord of the Flies", null, false),
@@ -31,24 +31,32 @@ public class LibraryApp {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the library");
-        System.out.println("t1) Show available books");
-        System.out.println("t2) Show checked out books");
-        System.out.println("t0) Exit");
-        System.out.print("Please choose an option: ");
 
-        int option = scanner.nextInt();
+        boolean run = true;
 
-        switch (option) {
-            case 1 -> {
-                showAvailableBooks(books);
+        while (run) {
+            System.out.println("t1) Show available books");
+            System.out.println("t2) Show checked out books");
+            System.out.println("t0) Exit");
+            System.out.print("Please choose an option: ");
+
+            int option = scanner.nextInt();
+
+            switch (option) {
+                case 1 -> {
+                    showAvailableBooks(books);
+                }
+                case 2 -> {
+                    showCheckedOutBooks(books);
+                }
+                case 0 -> {
+                    System.out.println("Goodbye");
+                    run = false;
+                }
             }
-            case 2 -> {
-                showCheckedOutBooks(books);
-            }
-            case 0 -> {
-                System.out.println("Goodbye");
-            }
+
         }
+
 
     }
 
@@ -73,3 +81,4 @@ public class LibraryApp {
     }
 
 }
+
