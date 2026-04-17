@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-import java.sql.SQLOutput;
+
 import java.util.Scanner;
 
 public class LibraryApp {
@@ -37,6 +37,18 @@ public class LibraryApp {
         System.out.print("Please choose an option");
 
         int option = scanner.nextInt();
+
+        switch (option) {
+            case 1 -> {
+                //showAvailableBooks(books);
+            }
+            case 2 -> {
+                //showCheckedOutBooks(books);
+            }
+            case 0 -> {
+                System.out.println("Goodbye");
+            }
+        }
 
 
     for (int i = 0; i < books.length; i++) {
