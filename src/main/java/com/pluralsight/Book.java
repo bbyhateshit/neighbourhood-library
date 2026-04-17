@@ -18,9 +18,13 @@ public Book(int id, String isbn, String title, String checkedOutTo, boolean isCh
     }
 
     public void checkOut(String name) {
-
+            this.checkedOutTo = name;
+            this.isCheckedOut = true;
     }
     public void checkIn(){
+            this.checkedOutTo = "";
+            this.isCheckedOut = false;
+
 
     }
 
